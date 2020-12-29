@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mark</title>
+    <style>
+      mark::before,
+      mark::after {
+        clip-path: inset(100%);
+        clip: rect(1px, 1px, 1px, 1px);
+        height: 1px;
+        overflow: hidden;
+        position: absolute;
+        white-space: nowrap;
+        width: 1px;
+      }
+
+      mark::before {
+        content: "강조 시작 부분";
+      }
+      mark::after {
+        content: "강조 종료 부분";
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        * flow 컨텐츠 모델 
+
+        mark태그는 사용자의 행동과 관련 있는 연관성을 나타내고(예를들어 현재 검색한 키워드를 강조 표시할때),
+        strong태그는 중요도를 가진 부분을 나타낸다.
+
+        접근성 관련해서 before, after태그로 사용할 수 있다. 하지만 이것은 콘텐츠의 이해에 강조표시의 유무가 꼭 필요할 때만 사용해야 합니다.
+    -->
+    <p>
+      Lorem ipsum dolor, sit amet consectetur <mark>adipisicing</mark> elit.
+      Esse, aliquam.
+    </p>
+    <p>
+      Lorem ipsum dolor, sit amet consectetur <strong>adipisicing</strong> elit.
+      Esse, aliquam.
+    </p>
+  </body>
+</html>
